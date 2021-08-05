@@ -11,8 +11,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
 import { AddTransactionComponent } from './components/add-transaction/add-transaction.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { AccountGridComponent } from './components/account-grid/account-grid.component';
 
-//const appRoutes: Routes = [{path: '', component: TransactionsComponent},{path: 'about', component: AboutComponent}]
+
+const appRoutes: Routes = [
+  {path: '', component: WelcomeComponent},
+  {path: 'views', component: TransactionsComponent}
+]
 
 @NgModule({
   declarations: [
@@ -22,13 +29,16 @@ import { MenuComponent } from './components/menu/menu.component';
     FooterComponent,
     ButtonComponent,
     AddTransactionComponent,
-    MenuComponent
+    MenuComponent,
+    WelcomeComponent,
+    SidebarComponent,
+    AccountGridComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    //RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    RouterModule.forRoot(appRoutes, { enableTracing: false }),
   ],
   providers: [],
   bootstrap: [AppComponent]
