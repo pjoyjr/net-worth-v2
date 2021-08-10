@@ -18,7 +18,10 @@ import { AccountGridComponent } from './components/account-grid/account-grid.com
 
 const appRoutes: Routes = [
   {path: '', component: WelcomeComponent},
-  {path: 'views', component: TransactionsComponent}
+  {path: 'add', component: SidebarComponent},
+  {path: 'edit', component: SidebarComponent},
+  {path: 'delete', component: SidebarComponent},
+  {path: 'search', component: SidebarComponent}
 ]
 
 @NgModule({
