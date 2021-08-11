@@ -15,5 +15,9 @@ export class TransactionsComponent implements OnInit {
   ngOnInit(): void {
     this.transactionService.getTransactions().subscribe((transactions) => this.transactions = transactions);
   }
+  
+  deleteTransaction(transaction: Transaction){
+    this.transactionService.deleteTransaction(transaction).subscribe(() => (this.transactions = this.transactions.filter((t) => t.id !== transaction.id))); 
+  }
 
 }

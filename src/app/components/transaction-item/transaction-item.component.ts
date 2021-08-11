@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Transaction } from '../../Transaction';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-transaction-item',
@@ -8,10 +9,15 @@ import { Transaction } from '../../Transaction';
 })
 export class TransactionItemComponent implements OnInit {
   @Input() transaction: any | Transaction;
+  @Output() onDeleteTransaction: EventEmitter<Transaction> = new EventEmitter();
+  faTimes = faTimes;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onDelete(transaction: Transaction) {
+    this.onDeleteTransaction.emit(transaction);
+   }
 }

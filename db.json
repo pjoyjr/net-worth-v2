@@ -15,13 +15,6 @@
       "id": 6
     },
     {
-      "isIncome": "false",
-      "description": "Food Payment",
-      "day": "2021-07-18",
-      "amount": -15.02,
-      "id": 7
-    },
-    {
       "isIncome": "true",
       "description": "Job Income",
       "day": "2021-07-19",

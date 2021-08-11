@@ -14,13 +14,13 @@ import { MenuComponent } from './components/menu/menu.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AccountGridComponent } from './components/account-grid/account-grid.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 const appRoutes: Routes = [
   {path: '', component: WelcomeComponent},
   {path: 'add', component: AddTransactionComponent},
   {path: 'edit', component: SidebarComponent},
-  {path: 'delete', component: SidebarComponent},
   {path: 'search', component: SidebarComponent}
 ]
 
@@ -42,6 +42,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes, { enableTracing: false }),
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

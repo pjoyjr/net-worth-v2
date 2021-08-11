@@ -8,8 +8,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-11">
             {{ transaction.amount }}
+        </div>
+        <div class="col-1">
+            <fa-icon [ngStyle]="{ color: 'red' }" [icon]="faTimes" (click)="onDelete(transaction)"></fa-icon>
         </div>
     </div>
 </div>
