@@ -18,7 +18,7 @@ import { AccountGridComponent } from './components/account-grid/account-grid.com
 
 const appRoutes: Routes = [
   {path: '', component: WelcomeComponent},
-  {path: 'add', component: SidebarComponent},
+  {path: 'add', component: AddTransactionComponent},
   {path: 'edit', component: SidebarComponent},
   {path: 'delete', component: SidebarComponent},
   {path: 'search', component: SidebarComponent}

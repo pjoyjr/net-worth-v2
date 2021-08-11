@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { UiService } from '../../services/ui.service';
 import { Transaction } from '../../Transaction';
 import { Subscription } from 'rxjs';
 
@@ -18,8 +17,7 @@ export class AddTransactionComponent implements OnInit {
   showAddTransaction: boolean = false;
   subscription: any | Subscription;
 
-  constructor(private uiService:UiService) {
-    this.subscription = this.uiService.onToggle().subscribe((value) => (this.showAddTransaction = value));
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -44,9 +42,4 @@ export class AddTransactionComponent implements OnInit {
     this.day = '';
     this.amount = 0;
   }
-  
-  toggleAddTransaction() {
-    this.uiService.toggleAddTransaction();
-  }
-
 }
