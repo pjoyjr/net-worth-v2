@@ -15,12 +15,14 @@ import { MenuComponent } from './components/menu/menu.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { AccountGridComponent } from './components/account-grid/account-grid.component';
 import { HeaderComponent } from './components/header/header.component';
+import { EditTransactionComponent } from './components/edit-transaction/edit-transaction.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: WelcomeComponent},
   {path: 'summary', component: TransactionsComponent},
   {path: 'add', component: AddTransactionComponent},
+  {path: 'edit/:transaction', component: EditTransactionComponent},
 ]
 
 @NgModule({
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     MenuComponent,
     WelcomeComponent,
     AccountGridComponent,
-    HeaderComponent
+    HeaderComponent,
+    EditTransactionComponent
   ],
   imports: [
     BrowserModule,
