@@ -1,16 +1,4 @@
 <form class="add-form" (ngSubmit)="onSubmit()">
-    <div class="form-control-radio">
-        <div class="row">
-            <div class="column">
-                <label for="income">Income: </label>
-                <input type="radio" name="isIncome" id="isIncome" [(ngModel)]="isIncome" value="true">
-            </div>
-            <div class="column">
-                <label for="expense">Expense: </label>
-                <input type="radio" name="isIncome" id="isIncome" [(ngModel)]="isIncome" value="false">
-            </div>
-        </div>
-    </div>
     <div class="form-control-text">
         <label for="description">Description: </label>
         <input type="text" name="description" id="description" [(ngModel)]="description" placeholder="e.g. Gas Purchase">
@@ -23,5 +11,5 @@
         <label for="amount">Amount: </label>
         <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="0">
     </div>
-    <input type="submit" value="Save" class="btn btn-block">
+    <app-button bgColor="white" text="Save Transaction" type="submit" class="btn"></app-button>
 </form>

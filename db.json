@@ -1,46 +1,64 @@
 {
   "transactions": [
     {
-      "isIncome": "false",
       "description": "Gas Purchase",
       "day": "2020-07-30",
       "amount": -7.41,
       "id": 5
     },
     {
-      "isIncome": "true",
       "description": "Job Income",
       "day": "2021-07-18",
       "amount": 249.83,
       "id": 6
     },
     {
-      "isIncome": "true",
       "description": "Job Income",
       "day": "2021-07-19",
       "amount": 200.15,
       "id": 8
     },
     {
-      "isIncome": "false",
       "description": "Gas",
       "day": "2021-07-22",
       "amount": 8.15,
       "id": 9
     },
     {
-      "isIncome": "true",
       "description": "job",
       "day": "2021-07-24",
       "amount": 89.41,
       "id": 10
     },
     {
-      "isIncome": "false",
       "description": "rental car",
       "day": "2021-08-29",
       "amount": 320.42,
       "id": 11
+    },
+    {
+      "description": "hello",
+      "day": "1993-07-30",
+      "amount": 23,
+      "id": 12
+    },
+    {
+      "description": "test",
+      "day": "1993-07-30",
+      "amount": 87.23,
+      "id": 13
+    },
+    {
+      "description": "yaya",
+      "day": "0004-07-30",
+      "amount": 84.26,
+      "id": 15
+    },
+    {
+      "description": "food",
+      "day": "2021-08-04",
+      "amount": 2.72,
+      "id": 16
     }
   ]
 }

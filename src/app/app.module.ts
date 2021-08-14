@@ -13,7 +13,6 @@ import { ButtonComponent } from './components/button/button.component';
 import { AddTransactionComponent } from './components/add-transaction/add-transaction.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AccountGridComponent } from './components/account-grid/account-grid.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -21,10 +20,8 @@ import { HeaderComponent } from './components/header/header.component';
 
 const appRoutes: Routes = [
   {path: '', component: WelcomeComponent},
-  {path: 'summary', component: SummaryComponent},
+  {path: 'summary', component: TransactionsComponent},
   {path: 'add', component: AddTransactionComponent},
-  {path: 'edit', component: SidebarComponent},
-  {path: 'search', component: SidebarComponent}
 ]
 
 @NgModule({
@@ -37,7 +34,6 @@ const appRoutes: Routes = [
     AddTransactionComponent,
     MenuComponent,
     WelcomeComponent,
-    SidebarComponent,
     AccountGridComponent,
     HeaderComponent
   ],
