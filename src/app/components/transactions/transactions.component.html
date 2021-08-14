@@ -1,2 +1,17 @@
-<app-transaction-item *ngFor="let transaction of transactions" [transaction]="transaction" (onDeleteTransaction)="deleteTransaction(transaction)">
-</app-transaction-item>
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+            <app-transaction-item *ngFor="let transaction of transactions" [transaction]="transaction" (onDeleteTransaction)="deleteTransaction(transaction)">
+            </app-transaction-item>
+        </div>
+        <div class="col-3">
+            <div class="row">
+                <app-add-transaction (onAddTransaction)="addTransaction($event)">
+                </app-add-transaction>
+            </div>
+            <div class="row">
+                <h1>Notes</h1>
+            </div>
+        </div>
+    </div>
+</div>

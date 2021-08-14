@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { TransactionService } from 'src/app/services/transaction.service';
 import { Transaction } from '../../Transaction';
 
 @Component({
@@ -8,18 +7,16 @@ import { Transaction } from '../../Transaction';
   styleUrls: ['./add-transaction.component.css']
 })
 export class AddTransactionComponent implements OnInit {
-  isIncome: any | boolean;
   description: any | string;
   day: any | string;
   amount: any | number;
 
-  transactions: Transaction[] = [];
+  @Output() onAddTransaction: EventEmitter<Transaction> = new EventEmitter();
 
-  constructor(private transactionService: TransactionService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.transactionService.getTransactions().subscribe((transactions) => this.transactions = transactions);
   }
 
   onSubmit(){
@@ -33,14 +30,15 @@ export class AddTransactionComponent implements OnInit {
       day: this.day,
       amount: this.amount
     };
-
-    this.addTransaction(newTransaction)
+    this.onAdd(newTransaction)
+    
     this.description = '';
     this.day = '';
     this.amount = 0;
   }
 
-  addTransaction(transaction: Transaction){
-    this.transactionService.addTransaction(transaction).subscribe((transaction) => this.transactions.push(transaction));
+  onAdd(newTransaction: Transaction){
+    this.onAddTransaction.emit(newTransaction);
   }
+  
 }

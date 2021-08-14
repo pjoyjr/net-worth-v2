@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { TransactionService } from '../../services/transaction.service';
 import { Transaction } from  '../../Transaction';
 
@@ -16,8 +16,12 @@ export class TransactionsComponent implements OnInit {
     this.transactionService.getTransactions().subscribe((transactions) => this.transactions = transactions);
   }
   
+  addTransaction(transaction: Transaction){
+    console.log(transaction);
+    this.transactionService.addTransaction(transaction).subscribe((transaction) => this.transactions.push(transaction));
+  }
+
   deleteTransaction(transaction: Transaction){
     this.transactionService.deleteTransaction(transaction).subscribe(() => (this.transactions = this.transactions.filter((t) => t.id !== transaction.id))); 
   }
-
 }

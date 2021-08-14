@@ -13,22 +13,10 @@
       "id": 6
     },
     {
-      "description": "Job Income",
-      "day": "2021-07-19",
-      "amount": 200.15,
-      "id": 8
-    },
-    {
       "description": "job",
       "day": "2021-07-24",
       "amount": 89.41,
       "id": 10
-    },
-    {
-      "description": "rental car",
-      "day": "2021-08-29",
-      "amount": 320.42,
-      "id": 11
     },
     {
       "description": "food",
@@ -41,6 +29,12 @@
       "day": "2021-08-19",
       "amount": 40.45,
       "id": 17
+    },
+    {
+      "description": "food",
+      "day": "2020-07-07",
+      "amount": 1.21,
+      "id": 18
     }
   ]
 }

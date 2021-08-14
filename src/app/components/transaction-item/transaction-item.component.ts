@@ -9,7 +9,6 @@ import { Transaction } from '../../Transaction';
 export class TransactionItemComponent implements OnInit {
   @Input() transaction: any | Transaction;
   @Output() onDeleteTransaction: EventEmitter<Transaction> = new EventEmitter();
-  @Output() onUpdateTransaction: EventEmitter<Transaction> = new EventEmitter();
 
   constructor() { }
 
