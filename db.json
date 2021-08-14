@@ -37,28 +37,16 @@
       "id": 11
     },
     {
-      "description": "hello",
-      "day": "1993-07-30",
-      "amount": 23,
-      "id": 12
-    },
-    {
-      "description": "test",
-      "day": "1993-07-30",
-      "amount": 87.23,
-      "id": 13
-    },
-    {
-      "description": "yaya",
-      "day": "0004-07-30",
-      "amount": 84.26,
-      "id": 15
-    },
-    {
       "description": "food",
       "day": "2021-08-04",
       "amount": 2.72,
       "id": 16
+    },
+    {
+      "description": "internet",
+      "day": "2021-08-19",
+      "amount": 40.45,
+      "id": 17
     }
   ]
 }

@@ -14,7 +14,6 @@ import { AddTransactionComponent } from './components/add-transaction/add-transa
 import { MenuComponent } from './components/menu/menu.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { AccountGridComponent } from './components/account-grid/account-grid.component';
-import { SummaryComponent } from './components/summary/summary.component';
 import { HeaderComponent } from './components/header/header.component';
 
 

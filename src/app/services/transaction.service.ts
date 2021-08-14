@@ -30,4 +30,8 @@ export class TransactionService {
   addTransaction(transaction: Transaction): Observable<Transaction> {
     return this.http.post<Transaction>(this.apiURL, transaction, httpOptions);
   }
+
+  updateHero(transaction: Transaction): Observable<Transaction> {
+    return this.http.put<Transaction>(this.apiURL, transaction, httpOptions);
+  }
 }
