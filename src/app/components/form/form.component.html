@@ -2,17 +2,18 @@
 <div *ngIf="showEditTransaction; then thenBlock else elseBlock"></div>
 <ng-template #thenBlock>
     <form class="edit-form">
+        {{fillForm(currEdit)}}
         <div class="form-control-text">
             <label for="description">Description: </label>
-            <input type="text" name="description" id="description" [(ngModel)]="description" placeholder="{{currEdit.description}}">
+            <input type="text" name="description" id="description" [(ngModel)]="description">
         </div>
         <div class="form-control-text">
             <label for="amount">Amount: </label>
-            <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="{{currEdit.amount}}">
+            <input type="number" name="amount" id="amount" [(ngModel)]="amount">
         </div>
         <div class="form-control-text">
             <label for="day">Day: </label>
-            <input type="date" name="day" id="day" [(ngModel)]="day" placeholder="{{currEdit.day}}">
+            <input type="date" name="day" id="day" [(ngModel)]="day">
         </div>
         <app-button bgColor="yellow" text="Save Transaction"></app-button>
         <app-button bgColor="red" text="Cancel Edit" (click)="cancelEdit()"></app-button>

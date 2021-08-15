@@ -7,7 +7,7 @@
             <h4>{{ transaction.day }}</h4>
         </div>
         <div class="col-2">
-            <app-button bgColor="yellow" text="Edit" (click)="onEdit(transaction)"></app-button>
+            <app-button *ngIf="!showEditTransaction" bgColor="yellow" text="Edit" (click)="onEdit(transaction)"></app-button>
         </div>
     </div>
     <div class="row">
@@ -18,7 +18,7 @@
             <p>ID: {{transaction.id}}</p>
         </div>
         <div class="col-2">
-            <app-button bgColor="red" text="Delete" (click)="onDelete(transaction)"></app-button>
+            <app-button *ngIf="!showEditTransaction" bgColor="red" text="Delete" (click)="onDelete(transaction)"></app-button>
         </div>
     </div>
 </div>

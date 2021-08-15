@@ -48,6 +48,12 @@ export class FormComponent implements OnInit {
     this.onAddTransaction.emit(newTransaction);
   }
 
+  fillForm(transaction: Transaction){
+    this.description = transaction.description;
+    this.day = transaction.day;
+    this.amount = transaction.amount;
+  }
+
   cancelEdit(){
     this.description = '';
     this.day = '';

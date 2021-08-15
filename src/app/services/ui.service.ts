@@ -15,7 +15,6 @@ export class UiService {
     this.subject.next(this.showEditTransaction);
   }
 
-
   onToggle(): Observable<any> {
     return this.subject.asObservable();
   }
