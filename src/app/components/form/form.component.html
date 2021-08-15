@@ -14,5 +14,5 @@
     </div>
     <app-button bgColor="green" text="Save Transaction" (click)="onSubmit()"></app-button>
 
-    <app-button bgColor="{{ showAddTransaction ? 'red' : 'green' }}" text="{{ showAddTransaction ? 'Close' : 'Add' }}" (click)="toggleAddTransaction()"></app-button>
+    <app-button bgColor="{{ showAddTransaction ? 'green' : 'yellow' }}" text="{{ showAddTransaction ? 'Add Transaction' : 'Edit Transaction' }}"></app-button>
 </form>

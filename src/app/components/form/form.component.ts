@@ -4,16 +4,16 @@ import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-add-transaction',
-  templateUrl: './add-transaction.component.html',
-  styleUrls: ['./add-transaction.component.css']
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.css']
 })
-export class AddTransactionComponent implements OnInit {
+export class FormComponent implements OnInit {
   description: any | string;
   day: any | string;
   amount: any | number;
 
-  showAddTransaction: any | boolean;
+  showAddTransaction: boolean = true;
   subscription: any | Subscription;
   @Output() onAddTransaction: EventEmitter<Transaction> = new EventEmitter();
 
@@ -44,9 +44,5 @@ export class AddTransactionComponent implements OnInit {
 
   onAdd(newTransaction: Transaction){
     this.onAddTransaction.emit(newTransaction);
-  }
-
-  toggleAddTransaction() {
-    this.uiService.toggleAddTransaction();
   }
 }

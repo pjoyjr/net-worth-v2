@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row">
         <div class="col-9">
-            <app-transaction-item *ngFor="let transaction of transactions" [transaction]="transaction" (onEditTransaction)="editTransaction(transaction)" (onDeleteTransaction)="deleteTransaction(transaction)">
+            <app-transaction-item *ngFor="let transaction of transactions" [transaction]="transaction" (onEditTransaction)="toggleEditTransaction(transaction)" (onDeleteTransaction)="deleteTransaction(transaction)">
             </app-transaction-item>
         </div>
         <div class="col-3">
             <div class="row">
-                <app-add-transaction (onAddTransaction)="addTransaction($event)">
-                </app-add-transaction>
+                <app-form (onAddTransaction)="addTransaction($event)">
+                </app-form>
             </div>
             <div class="row">
                 <h1>Notes</h1>

@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { TransactionService } from '../../services/transaction.service';
 import { Transaction } from  '../../Transaction';
+import { UiService } from '../../services/ui.service';
 
 @Component({
   selector: 'app-transactions',
@@ -9,9 +10,8 @@ import { Transaction } from  '../../Transaction';
 })
 export class TransactionsComponent implements OnInit {
   transactions: Transaction[] = [];
-  currEditID: any | number;
 
-  constructor(private transactionService: TransactionService) { }
+  constructor(private transactionService: TransactionService, private uiService: UiService) { }
 
   ngOnInit(): void {
     this.transactionService.getTransactions().subscribe((transactions) => this.transactions = transactions);
@@ -22,12 +22,14 @@ export class TransactionsComponent implements OnInit {
     this.transactionService.addTransaction(transaction).subscribe((transaction) => this.transactions.push(transaction));
   }
   
-  editTransaction(transaction: Transaction){
-    this.currEditID = transaction.id;  
-    console.log(this.currEditID);
+  toggleEditTransaction(transaction: Transaction){
+    this.uiService.toggleAddTransaction();
+
+    this.transactionService.setEditID(transaction.id);
   }
 
   deleteTransaction(transaction: Transaction){
     this.transactionService.deleteTransaction(transaction).subscribe(() => (this.transactions = this.transactions.filter((t) => t.id !== transaction.id))); 
   }
+  
 }

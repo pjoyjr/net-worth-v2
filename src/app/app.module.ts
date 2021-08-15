@@ -10,10 +10,10 @@ import { TransactionsComponent } from './components/transactions/transactions.co
 import { TransactionItemComponent } from './components/transaction-item/transaction-item.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
-import { AddTransactionComponent } from './components/add-transaction/add-transaction.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { AccountGridComponent } from './components/account-grid/account-grid.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FormComponent } from './components/form/form.component';
 
 
 const appRoutes: Routes = [
@@ -27,10 +27,10 @@ const appRoutes: Routes = [
     TransactionItemComponent,
     FooterComponent,
     ButtonComponent,
-    AddTransactionComponent,
     MenuComponent,
     AccountGridComponent,
     HeaderComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
