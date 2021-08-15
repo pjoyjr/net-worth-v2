@@ -9,13 +9,15 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  @Input() description: any | string;
-  @Input() day: any | string;
-  @Input() amount: any | number;
+  @Input() currEdit: any | Transaction;
+  description: any | string;
+  day: any | string;
+  amount: any | number;
 
   showEditTransaction: boolean = false;
   subscription: any | Subscription;
   @Output() onAddTransaction: EventEmitter<Transaction> = new EventEmitter();
+  @Output() onCancelEdit: EventEmitter<Transaction> = new EventEmitter();
 
   constructor(private uiService:UiService) {
     this.subscription = this.uiService.onToggle().subscribe((value) => (this.showEditTransaction = value));
@@ -50,6 +52,6 @@ export class FormComponent implements OnInit {
     this.description = '';
     this.day = '';
     this.amount = 0;
-    this.uiService.toggleEditTransaction();
+    this.onCancelEdit.emit();
   }
 }

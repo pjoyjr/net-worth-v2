@@ -4,17 +4,17 @@
     <form class="edit-form">
         <div class="form-control-text">
             <label for="description">Description: </label>
-            <input type="text" name="description" id="description" [(ngModel)]="description" placeholder="e.g. Gas Purchase">
-        </div>
-        <div class="form-control-text">
-            <label for="day">Day: </label>
-            <input type="date" name="day" id="day" [(ngModel)]="day" placeholder="Add Day">
+            <input type="text" name="description" id="description" [(ngModel)]="description" placeholder="{{currEdit.description}}">
         </div>
         <div class="form-control-text">
             <label for="amount">Amount: </label>
-            <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="0">
+            <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="{{currEdit.amount}}">
         </div>
-        <app-button bgColor="yellow" text="Edit Transaction"></app-button>
+        <div class="form-control-text">
+            <label for="day">Day: </label>
+            <input type="date" name="day" id="day" [(ngModel)]="day" placeholder="{{currEdit.day}}">
+        </div>
+        <app-button bgColor="yellow" text="Save Transaction"></app-button>
         <app-button bgColor="red" text="Cancel Edit" (click)="cancelEdit()"></app-button>
     </form>
 </ng-template>
@@ -25,12 +25,12 @@
             <input type="text" name="description" id="description" [(ngModel)]="description" placeholder="e.g. Gas Purchase">
         </div>
         <div class="form-control-text">
-            <label for="day">Day: </label>
-            <input type="date" name="day" id="day" [(ngModel)]="day" placeholder="Add Day">
-        </div>
-        <div class="form-control-text">
             <label for="amount">Amount: </label>
             <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="0">
+        </div>
+        <div class="form-control-text">
+            <label for="day">Day: </label>
+            <input type="date" name="day" id="day" [(ngModel)]="day" placeholder="Add Day">
         </div>
         <app-button bgColor="green" text="Add Transaction" (click)="onSubmit()"></app-button>
     </form>

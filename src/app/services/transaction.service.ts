@@ -16,8 +16,6 @@ const httpOptions = {
 export class TransactionService {
   private apiURL = 'http://localhost:5000/transactions';
   
-  private currEditID: any | number;
-
   constructor(private http:HttpClient) { }
 
   getTransactions(): Observable<Transaction[]> {
@@ -33,7 +31,4 @@ export class TransactionService {
     return this.http.post<Transaction>(this.apiURL, transaction, httpOptions);
   }
 
-  setEditID(id: any): void {
-    this.currEditID = id;
-  }
 }

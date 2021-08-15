@@ -10,6 +10,7 @@ import { UiService } from '../../services/ui.service';
 })
 export class TransactionsComponent implements OnInit {
   transactions: Transaction[] = [];
+  currEdit: any | Transaction;
 
   constructor(private transactionService: TransactionService, private uiService: UiService) { }
 
@@ -23,9 +24,13 @@ export class TransactionsComponent implements OnInit {
   }
   
   toggleEditTransaction(transaction: Transaction){
-    this.uiService.toggleEditTransaction();
-
-    this.transactionService.setEditID(transaction.id);
+    this.uiService.setEditToggle(true);
+    this.currEdit = transaction;
+  }
+  
+  toggleCancelTransaction(){
+    this.uiService.setEditToggle(false);
+    this.currEdit = undefined;
   }
 
   deleteTransaction(transaction: Transaction){
