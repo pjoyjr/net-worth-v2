@@ -1,9 +1,17 @@
 .add-form {
     margin-bottom: 5px;
+    background-color: gainsboro;
+    padding: 7px;
+    border: 5px solid purple;
+    border-radius: 5px;
 }
 
 .edit-form {
     margin-bottom: 5px;
+    background-color: gainsboro;
+    padding: 7px;
+    border: 5px solid purple;
+    border-radius: 5px;
 }
 
 .form-control-text input {

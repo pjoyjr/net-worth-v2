@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-9">
+        <div class="col-9 list-transactions">
             <app-transaction-item *ngFor="let transaction of transactions" [transaction]="transaction" (onEditTransaction)="toggleEditTransaction(transaction)" (onDeleteTransaction)="deleteTransaction(transaction)">
             </app-transaction-item>
         </div>

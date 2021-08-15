@@ -13,6 +13,7 @@ export class FormComponent implements OnInit {
   description: any | string;
   day: any | string;
   amount: any | number;
+  id: any | number;
 
   showEditTransaction: boolean = false;
   subscription: any | Subscription;
@@ -54,6 +55,7 @@ export class FormComponent implements OnInit {
   }
 
   fillForm(transaction: Transaction){
+    this.id = transaction.id;
     this.description = transaction.description;
     this.day = transaction.day;
     this.amount = transaction.amount;
