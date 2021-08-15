@@ -6,7 +6,7 @@
         </div>
         <div class="col-3">
             <div class="row">
-                <app-form [currEdit]="currEdit" (onCancelEdit)="toggleCancelTransaction()" (onAddTransaction)="addTransaction($event)">
+                <app-form [currEdit]="currEdit" (onEditTransaction)="updateTransaction()" (onCancelEdit)="toggleCancelTransaction()" (onAddTransaction)="addTransaction($event)">
                 </app-form>
             </div>
             <div class="row">

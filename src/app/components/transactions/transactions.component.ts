@@ -36,5 +36,9 @@ export class TransactionsComponent implements OnInit {
   deleteTransaction(transaction: Transaction){
     this.transactionService.deleteTransaction(transaction).subscribe(() => (this.transactions = this.transactions.filter((t) => t.id !== transaction.id))); 
   }
+
+  updateTransaction(){
+    console.log("updated entry!");
+  }
   
 }

@@ -17,6 +17,7 @@ export class FormComponent implements OnInit {
   showEditTransaction: boolean = false;
   subscription: any | Subscription;
   @Output() onAddTransaction: EventEmitter<Transaction> = new EventEmitter();
+  @Output() onEditTransaction: EventEmitter<Transaction> = new EventEmitter();
   @Output() onCancelEdit: EventEmitter<Transaction> = new EventEmitter();
 
   constructor(private uiService:UiService) {
@@ -46,6 +47,10 @@ export class FormComponent implements OnInit {
 
   onAdd(newTransaction: Transaction){
     this.onAddTransaction.emit(newTransaction);
+  }
+
+  onEdit(){
+    this.onEditTransaction.emit();
   }
 
   fillForm(transaction: Transaction){
