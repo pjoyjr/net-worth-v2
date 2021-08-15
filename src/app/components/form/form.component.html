@@ -36,15 +36,21 @@
     <form class="add-form">
         <h2>Add Transaction</h2>
         <div class="form-control-text">
-            <label for="description">Description: </label>
+            <h3>
+                <label for="description">Description: </label>
+            </h3>
             <input type="text" name="description" id="description" [(ngModel)]="description" placeholder="e.g. Gas Purchase">
         </div>
         <div class="form-control-text">
-            <label for="amount">Amount: </label>
+            <h3>
+                <label for="amount">Amount: </label>
+            </h3>
             <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="0">
         </div>
         <div class="form-control-text">
-            <label for="day">Day: </label>
+            <h3>
+                <label for="day">Day: </label>
+            </h3>
             <input type="date" name="day" id="day" [(ngModel)]="day" placeholder="Add Day">
         </div>
         <app-button bgColor="green" text="Save Transaction" (click)="onSubmit()"></app-button>
