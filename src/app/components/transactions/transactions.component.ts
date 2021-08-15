@@ -23,7 +23,7 @@ export class TransactionsComponent implements OnInit {
   }
   
   toggleEditTransaction(transaction: Transaction){
-    this.uiService.toggleAddTransaction();
+    this.uiService.toggleEditTransaction();
 
     this.transactionService.setEditID(transaction.id);
   }

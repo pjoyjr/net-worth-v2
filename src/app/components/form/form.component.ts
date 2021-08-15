@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Transaction } from '../../Transaction';
 import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
@@ -9,16 +9,16 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  description: any | string;
-  day: any | string;
-  amount: any | number;
+  @Input() description: any | string;
+  @Input() day: any | string;
+  @Input() amount: any | number;
 
-  showAddTransaction: boolean = true;
+  showEditTransaction: boolean = false;
   subscription: any | Subscription;
   @Output() onAddTransaction: EventEmitter<Transaction> = new EventEmitter();
 
   constructor(private uiService:UiService) {
-    this.subscription = this.uiService.onToggle().subscribe((value) => (this.showAddTransaction = value));
+    this.subscription = this.uiService.onToggle().subscribe((value) => (this.showEditTransaction = value));
   }
 
   ngOnInit(): void {
@@ -44,5 +44,12 @@ export class FormComponent implements OnInit {
 
   onAdd(newTransaction: Transaction){
     this.onAddTransaction.emit(newTransaction);
+  }
+
+  cancelEdit(){
+    this.description = '';
+    this.day = '';
+    this.amount = 0;
+    this.uiService.toggleEditTransaction();
   }
 }

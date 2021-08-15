@@ -1,18 +1,37 @@
-<!--  *ngIf="showAddTransaction" -->
-<form class="add-form">
-    <div class="form-control-text">
-        <label for="description">Description: </label>
-        <input type="text" name="description" id="description" [(ngModel)]="description" placeholder="e.g. Gas Purchase">
-    </div>
-    <div class="form-control-text">
-        <label for="day">Day: </label>
-        <input type="date" name="day" id="day" [(ngModel)]="day" placeholder="Add Day">
-    </div>
-    <div class="form-control-text">
-        <label for="amount">Amount: </label>
-        <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="0">
-    </div>
-    <app-button bgColor="green" text="Save Transaction" (click)="onSubmit()"></app-button>
-
-    <app-button bgColor="{{ showAddTransaction ? 'green' : 'yellow' }}" text="{{ showAddTransaction ? 'Add Transaction' : 'Edit Transaction' }}"></app-button>
-</form>
+<!--  -->
+<div *ngIf="showEditTransaction; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+    <form class="edit-form">
+        <div class="form-control-text">
+            <label for="description">Description: </label>
+            <input type="text" name="description" id="description" [(ngModel)]="description" placeholder="e.g. Gas Purchase">
+        </div>
+        <div class="form-control-text">
+            <label for="day">Day: </label>
+            <input type="date" name="day" id="day" [(ngModel)]="day" placeholder="Add Day">
+        </div>
+        <div class="form-control-text">
+            <label for="amount">Amount: </label>
+            <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="0">
+        </div>
+        <app-button bgColor="yellow" text="Edit Transaction"></app-button>
+        <app-button bgColor="red" text="Cancel Edit" (click)="cancelEdit()"></app-button>
+    </form>
+</ng-template>
+<ng-template #elseBlock>
+    <form class="add-form">
+        <div class="form-control-text">
+            <label for="description">Description: </label>
+            <input type="text" name="description" id="description" [(ngModel)]="description" placeholder="e.g. Gas Purchase">
+        </div>
+        <div class="form-control-text">
+            <label for="day">Day: </label>
+            <input type="date" name="day" id="day" [(ngModel)]="day" placeholder="Add Day">
+        </div>
+        <div class="form-control-text">
+            <label for="amount">Amount: </label>
+            <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="0">
+        </div>
+        <app-button bgColor="green" text="Add Transaction" (click)="onSubmit()"></app-button>
+    </form>
+</ng-template>
