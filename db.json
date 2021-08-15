@@ -19,12 +19,6 @@
       "id": 10
     },
     {
-      "description": "food",
-      "day": "2021-08-04",
-      "amount": 2.72,
-      "id": 16
-    },
-    {
       "description": "internet",
       "day": "2021-08-19",
       "amount": 40.45,
@@ -35,6 +29,12 @@
       "day": "2020-07-07",
       "amount": 1.21,
       "id": 18
+    },
+    {
+      "description": "cc payment",
+      "day": "2021-02-20",
+      "amount": 4.68,
+      "id": 19
     }
   ]
 }

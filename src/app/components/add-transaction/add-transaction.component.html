@@ -1,3 +1,4 @@
+<!--  *ngIf="showAddTransaction" -->
 <form class="add-form">
     <div class="form-control-text">
         <label for="description">Description: </label>
@@ -12,4 +13,6 @@
         <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="0">
     </div>
     <app-button bgColor="green" text="Save Transaction" (click)="onSubmit()"></app-button>
+
+    <app-button bgColor="{{ showAddTransaction ? 'red' : 'green' }}" text="{{ showAddTransaction ? 'Close' : 'Add' }}" (click)="toggleAddTransaction()"></app-button>
 </form>

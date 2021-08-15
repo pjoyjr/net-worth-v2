@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Transaction } from '../../Transaction';
+import { UiService } from '../../services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-add-transaction',
@@ -11,9 +13,12 @@ export class AddTransactionComponent implements OnInit {
   day: any | string;
   amount: any | number;
 
+  showAddTransaction: any | boolean;
+  subscription: any | Subscription;
   @Output() onAddTransaction: EventEmitter<Transaction> = new EventEmitter();
 
-  constructor() {
+  constructor(private uiService:UiService) {
+    this.subscription = this.uiService.onToggle().subscribe((value) => (this.showAddTransaction = value));
   }
 
   ngOnInit(): void {
@@ -40,5 +45,8 @@ export class AddTransactionComponent implements OnInit {
   onAdd(newTransaction: Transaction){
     this.onAddTransaction.emit(newTransaction);
   }
-  
+
+  toggleAddTransaction() {
+    this.uiService.toggleAddTransaction();
+  }
 }

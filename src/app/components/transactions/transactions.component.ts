@@ -9,6 +9,7 @@ import { Transaction } from  '../../Transaction';
 })
 export class TransactionsComponent implements OnInit {
   transactions: Transaction[] = [];
+  currEditID: any | number;
 
   constructor(private transactionService: TransactionService) { }
 
@@ -19,6 +20,11 @@ export class TransactionsComponent implements OnInit {
   addTransaction(transaction: Transaction){
     console.log(transaction);
     this.transactionService.addTransaction(transaction).subscribe((transaction) => this.transactions.push(transaction));
+  }
+  
+  editTransaction(transaction: Transaction){
+    this.currEditID = transaction.id;  
+    console.log(this.currEditID);
   }
 
   deleteTransaction(transaction: Transaction){
