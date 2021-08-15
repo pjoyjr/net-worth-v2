@@ -1,8 +1,15 @@
 <div class="container">
     <div class="row">
-        <div class="col-9 list-transactions">
-            <app-transaction-item *ngFor="let transaction of transactions" [transaction]="transaction" (onEditTransaction)="toggleEditTransaction(transaction)" (onDeleteTransaction)="deleteTransaction(transaction)">
-            </app-transaction-item>
+        <div class="col-9">
+            <form method="post">
+                <app-button bgColor="orange" text="Search"></app-button>
+                <span><input type="text" title="Search" /></span>
+            </form>
+
+            <div class="div">
+                <app-transaction-item *ngFor="let transaction of transactions" [transaction]="transaction" (onEditTransaction)="toggleEditTransaction(transaction)" (onDeleteTransaction)="deleteTransaction(transaction)">
+                </app-transaction-item>
+            </div>
         </div>
         <div class="col-3">
             <div class="row">
