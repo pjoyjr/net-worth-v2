@@ -5,6 +5,34 @@
                 <app-button bgColor="orange" text="Search"></app-button>
                 <span><input type="text" title="Search" /></span>
             </form>
+            <div class="div">
+                <table class="table table-striped table-bordered table-sm row-border" datatable [dtOptions]="dtOptions">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Day</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let transaction of transactions">
+                            <td>{{transaction.id}}</td>
+                            <td>{{transaction.day}}</td>
+                            <td>{{transaction.amount}}</td>
+                            <td>{{transaction.description}}</td>
+                            <td>
+                                <app-button bgColor="yellow" text="Edit" (click)="toggleEditTransaction(transaction)"></app-button>
+                            </td>
+                            <td>
+                                <app-button bgColor="red" text="Delete" (click)="deleteTransaction(transaction)"></app-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <div class="div">
                 <app-transaction-item *ngFor="let transaction of transactions" [transaction]="transaction" (onEditTransaction)="toggleEditTransaction(transaction)" (onDeleteTransaction)="deleteTransaction(transaction)">
