@@ -29,6 +29,12 @@
       "day": "2021-02-20",
       "amount": 4.68,
       "id": 19
+    },
+    {
+      "description": "Electric",
+      "day": "2021-08-16",
+      "amount": 48.24,
+      "id": 20
     }
   ]
 }

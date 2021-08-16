@@ -1,58 +1,32 @@
 <!--  -->
-<div *ngIf="showEditTransaction; then thenBlock else elseBlock"></div>
-<ng-template #thenBlock>
-    <form class="edit-form">
-        <h2>Edit Transaction</h2>
-        {{fillForm(currEdit)}}
-        <div class="form-control-text">
-            <h3>
-                <label for="id">ID:</label>
-            </h3>
-            <input type="text" name="id" id="id" [(ngModel)]="id" readonly disabled>
-        </div>
-        <div class="form-control-text">
-            <h3>
-                <label for="description">Description:</label>
-            </h3>
-            <input type="text" name="description" id="description" [(ngModel)]="description">
-        </div>
-        <div class="form-control-text">
-            <h3>
-                <label for="amount">Amount:</label>
-            </h3>
-            <input type="number" name="amount" id="amount" [(ngModel)]="amount">
-        </div>
-        <div class="form-control-text">
-            <h3>
-                <label for="day">Day:</label>
-            </h3>
-            <input type="date" name="day" id="day" [(ngModel)]="day">
-        </div>
-        <app-button bgColor="yellow" text="Save Transaction" (click)="onEdit()"></app-button>
-        <app-button bgColor="red" text="Cancel Edit" (click)="cancelEdit()"></app-button>
-    </form>
-</ng-template>
-<ng-template #elseBlock>
-    <form class="add-form">
-        <h2>Add Transaction</h2>
-        <div class="form-control-text">
-            <h3>
-                <label for="description">Description: </label>
-            </h3>
-            <input type="text" name="description" id="description" [(ngModel)]="description" placeholder="e.g. Gas Purchase">
-        </div>
-        <div class="form-control-text">
-            <h3>
-                <label for="amount">Amount: </label>
-            </h3>
-            <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="0">
-        </div>
-        <div class="form-control-text">
-            <h3>
-                <label for="day">Day: </label>
-            </h3>
-            <input type="date" name="day" id="day" [(ngModel)]="day" placeholder="Add Day">
-        </div>
-        <app-button bgColor="green" text="Save Transaction" (click)="onSubmit()"></app-button>
-    </form>
-</ng-template>
+<form>
+    <h2 *ngIf="!showEditTransaction">Add Transaction</h2>
+    <h2 *ngIf="showEditTransaction">Edit Transaction{{fillForm(currEdit)}}</h2>
+    <div *ngIf="showEditTransaction" class="form-control-text">
+        <h3>
+            <label for="id">ID:</label>
+        </h3>
+        <input type="text" name="id" id="id" [(ngModel)]="id" readonly disabled>
+    </div>
+    <div class="form-control-text">
+        <h3>
+            <label for="description">Description: </label>
+        </h3>
+        <input type="text" name="description" id="description" [(ngModel)]="description" placeholder="e.g. Gas Purchase">
+    </div>
+    <div class="form-control-text">
+        <h3>
+            <label for="amount">Amount: </label>
+        </h3>
+        <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="0">
+    </div>
+    <div class="form-control-text">
+        <h3>
+            <label for="day">Day: </label>
+        </h3>
+        <input type="date" name="day" id="day" [(ngModel)]="day" placeholder="Add Day">
+    </div>
+    <app-button *ngIf="showEditTransaction" bgColor="yellow" text="Save Transaction" (click)="onEdit()"></app-button>
+    <app-button *ngIf="showEditTransaction" bgColor="red" text="Cancel Edit" (click)="cancelEdit()"></app-button>
+    <app-button *ngIf="!showEditTransaction" bgColor="green" text="Save Transaction" (click)="onSubmit()"></app-button>
+</form>
