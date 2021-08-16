@@ -8,13 +8,13 @@ import { DataTablesModule } from 'angular-datatables';
 
 import { AppComponent } from './app.component';
 import { TransactionsComponent } from './components/transactions/transactions.component';
-import { TransactionItemComponent } from './components/transaction-item/transaction-item.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { AccountGridComponent } from './components/account-grid/account-grid.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormComponent } from './components/form/form.component';
+import { DataTableComponent } from './components/data-table/data-table.component';
 
 
 const appRoutes: Routes = [
@@ -25,13 +25,13 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     TransactionsComponent,
-    TransactionItemComponent,
     FooterComponent,
     ButtonComponent,
     MenuComponent,
     AccountGridComponent,
     HeaderComponent,
     FormComponent,
+    DataTableComponent,
   ],
   imports: [
     BrowserModule,

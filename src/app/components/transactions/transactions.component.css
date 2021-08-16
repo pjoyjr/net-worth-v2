@@ -17,4 +17,5 @@ span {
 
 app-button {
     float: right;
+    padding-right: 2px;
 }

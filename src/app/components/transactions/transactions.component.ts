@@ -12,30 +12,10 @@ export class TransactionsComponent implements OnInit {
   transactions: Transaction[] = [];
   currEdit: any | Transaction;
 
-  @Output() dtOptions: any = {};
-
-  @Output() data = [
-    {name: 'Ajay', email: 'therichpost@gmail.com', website:'therichpost.com'},
-    {name: 'Jas', email: 'therichpost@gmail.com', website:'therichpost.com'},
-    {name: 'therichpost', email: 'therichpost@gmail.com', website:'therichpost.com'},
-    {name: 'therichpost', email: 'therichpost@gmail.com', website:'therichpost.com'},
-    {name: 'Jas', email: 'therichpost@gmail.com', website:'therichpost.com'},
-    {name: 'therichpost', email: 'therichpost@gmail.com', website:'therichpost.com'},
-    {name: 'therichpost', email: 'therichpost@gmail.com', website:'therichpost.com'},
-    {name: 'Jas', email: 'therichpost@gmail.com', website:'therichpost.com'},
-    {name: 'therichpost', email: 'therichpost@gmail.com', website:'therichpost.com'},
-    {name: 'therichpost', email: 'therichpost@gmail.com', website:'therichpost.com'},
-  ];
 
   constructor(private transactionService: TransactionService, private uiService: UiService) { }
 
   ngOnInit(): void {
-    this.dtOptions={
-      pagingType: 'full_numbers',
-      pageLength: 5,
-      lengthMenu: [5,10,15],
-      processing: true
-    };
     this.transactionService.getTransactions().subscribe((transactions) => this.transactions = transactions);
   }
   
