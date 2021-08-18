@@ -10,7 +10,6 @@ import { Subscription } from 'rxjs';
 })
 export class DataTableComponent implements OnInit {
   @Input() transactions: Transaction[] = [];
-  dtOptions: any = {};
   
   subscription: any | Subscription;
   @Output() onEditTransaction: EventEmitter<Transaction> = new EventEmitter();
@@ -19,12 +18,6 @@ export class DataTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.dtOptions={
-      pagingType: 'full_numbers',
-      pageLength: 5,
-      lengthMenu: [5,10,25],
-      processing: true
-    };
   }
 
   onDelete(transaction: Transaction): void {
