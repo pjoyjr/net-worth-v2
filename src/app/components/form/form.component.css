@@ -13,3 +13,7 @@ form {
     padding: 3px 7px;
     font-size: 17px;
 }
+
+.extraTopPadding {
+    margin-top: 14px;
+}
