@@ -21,8 +21,6 @@ export class TransactionsComponent implements OnInit {
   
   addTransaction(transaction: Transaction){
     this.transactionService.addTransaction(transaction).subscribe((transaction) => this.transactions.push(transaction));
-    console.log("Added Transaction!");
-    console.log(transaction);
   }
   
   toggleEditTransaction(transaction: Transaction){
@@ -33,13 +31,10 @@ export class TransactionsComponent implements OnInit {
   toggleCancelTransaction(){
     this.uiService.setEditToggle();
     this.currEdit = undefined;
-    console.log("Canceled Editing Transaction!");
   }
 
   deleteTransaction(transaction: Transaction){
     this.transactionService.deleteTransaction(transaction).subscribe(() => (this.transactions = this.transactions.filter((t) => t.id !== transaction.id))); 
-    console.log("Deleted Transaction!");
-    console.log(transaction);
   }
 
   updateTransaction(editedTransaction: Transaction){
@@ -51,8 +46,6 @@ export class TransactionsComponent implements OnInit {
         transaction.amount = editedTransaction.amount;
       }})
     ));
-    console.log("Edited Transaction!");
-    console.log(editedTransaction);
     this.uiService.setEditToggle();
   }
 }

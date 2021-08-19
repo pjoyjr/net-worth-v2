@@ -31,8 +31,6 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     if(this.showEditTransaction && this.editDescription == undefined){
       this.fillForm();
-    }else{
-      console.log("not filling form");
     }
   }
 
@@ -82,7 +80,6 @@ export class FormComponent implements OnInit {
     this.onEditTransaction.emit(editedTransaction);
   }
 
-  //Uncomment description, date, and amount
   fillForm(){
     this.id = this.currEdit.id;
     this.editDescription = this.currEdit.description;
