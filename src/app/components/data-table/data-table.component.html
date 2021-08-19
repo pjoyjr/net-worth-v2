@@ -2,7 +2,7 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Day</th>
+            <th>Date</th>
             <th>Amount</th>
             <th>Description</th>
             <th>Edit/Delete</th>
@@ -11,7 +11,7 @@
     <tbody>
         <tr *ngFor="let transaction of transactions">
             <td>{{transaction.id}}</td>
-            <td>{{transaction.day}}</td>
+            <td>{{transaction.date}}</td>
             <td>{{transaction.amount}}</td>
             <td>{{transaction.description}}</td>
             <td>

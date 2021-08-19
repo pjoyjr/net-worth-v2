@@ -12,19 +12,19 @@
         <h3>
             <label for="description">Description: </label>
         </h3>
-        <input type="text" name="description" id="description" [(ngModel)]="description" placeholder="e.g. Gas Purchase">
+        <input type="text" name="description" id="description" [(ngModel)]="description">
     </div>
     <div class="form-control-text">
         <h3>
             <label for="amount">Amount: </label>
         </h3>
-        <input type="number" name="amount" id="amount" [(ngModel)]="amount" placeholder="0">
+        <input type="number" name="amount" id="amount" [(ngModel)]="amount" step=".01">
     </div>
     <div class="form-control-text">
         <h3>
-            <label for="day">Day: </label>
+            <label for="date">Date: </label>
         </h3>
-        <input type="date" name="day" id="day" [(ngModel)]="day" placeholder="Add Day">
+        <input type="date" name="date" id="date" [(ngModel)]="date">
     </div>
     <app-button *ngIf="showEditTransaction" bgColor="yellow" text="Save Transaction" (click)="onEdit()"></app-button>
     <app-button *ngIf="showEditTransaction" bgColor="red" text="Cancel Edit" (click)="cancelEdit()"></app-button>

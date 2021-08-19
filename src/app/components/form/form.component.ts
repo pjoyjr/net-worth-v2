@@ -9,10 +9,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  @Input() currEdit: any | Transaction;
-  description: any | string;
-  day: any | string;
-  amount: any | number;
+  @Input() currEdit: any | Transaction = undefined;
+  description: any | string = "e.g. Gas Purchase";
+  date: any | string;
+  amount: any | number = 0.00;
   id: any | number;
 
   showEditTransaction: boolean = false;
@@ -26,23 +26,26 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.currEdit != undefined){
+      this.fillForm(this.currEdit);
+    }
   }
 
   onSubmit(){
-    if((!this.description || !this.day || !this.amount)){
+    if((!this.description || !this.date || !this.amount)){
       alert('Please fill out form!');
       return;
     }
 
     const newTransaction: Transaction = {
       description: this.description,
-      day: this.day,
+      date: this.date,
       amount: this.amount
     };
     this.onAdd(newTransaction)
     
     this.description = '';
-    this.day = '';
+    this.date = '';
     this.amount = 0;
   }
 
@@ -57,13 +60,13 @@ export class FormComponent implements OnInit {
   fillForm(transaction: Transaction){
     this.id = transaction.id;
     this.description = transaction.description;
-    this.day = transaction.day;
+    this.date = transaction.date;
     this.amount = transaction.amount;
   }
 
   cancelEdit(){
     this.description = '';
-    this.day = '';
+    this.date = '';
     this.amount = 0;
     this.onCancelEdit.emit();
   }
