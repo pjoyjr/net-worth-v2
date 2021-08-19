@@ -14,8 +14,3 @@ span {
     overflow: hidden;
     padding-right: 10px;
 }
-
-app-button {
-    float: right;
-    padding-right: 2px;
-}
