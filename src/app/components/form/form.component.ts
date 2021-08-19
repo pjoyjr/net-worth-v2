@@ -79,9 +79,9 @@ export class FormComponent implements OnInit {
   //Uncomment description, date, and amount
   fillForm(){
     this.id = this.currEdit.id;
-    //this.description = this.currEdit.description;
-    //this.date = this.currEdit.date;
-    //this.amount = this.currEdit.amount;
+    this.editDescription = this.currEdit.description;
+    this.editDate = this.currEdit.date;
+    this.editAmount = this.currEdit.amount;
   }
 
   cancelEdit(){
