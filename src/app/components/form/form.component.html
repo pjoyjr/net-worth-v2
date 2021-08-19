@@ -1,3 +1,4 @@
+<!--ADD FORM-->
 <form *ngIf="!showEditTransaction">
     <h2>Add Transaction</h2>
     <div class="form-control-text">
@@ -20,9 +21,10 @@
     </div>
     <app-button *ngIf="!showEditTransaction" bgColor="green" text="Save Transaction" (click)="onSubmit()"></app-button>
 </form>
-
+<!--EDIT FORM-->
 <form *ngIf="showEditTransaction">
-    <h2>Edit Transaction{{fillForm()}}</h2>
+    <h2>Edit Transaction</h2>
+    {{ngOnInit()}}
     <div class="form-control-text">
         <h3>
             <label for="id">ID:</label>

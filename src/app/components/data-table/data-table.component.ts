@@ -1,5 +1,6 @@
 import { Component,  OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Transaction } from  '../../Transaction';
+import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
 
 
@@ -11,11 +12,13 @@ import { Subscription } from 'rxjs';
 export class DataTableComponent implements OnInit {
   @Input() transactions: Transaction[] = [];
   
+  showEditTransaction: boolean = false;
   subscription: any | Subscription;
   @Output() onEditTransaction: EventEmitter<Transaction> = new EventEmitter();
   @Output() onDeleteTransaction: EventEmitter<Transaction> = new EventEmitter();
 
-  constructor() { }
+  constructor(private uiService:UiService) {
+    this.subscription = this.uiService.onToggle().subscribe((value) => (this.showEditTransaction = value)); }
 
   ngOnInit(): void {
   }

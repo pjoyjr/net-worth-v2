@@ -5,7 +5,7 @@
             <th>Date</th>
             <th>Amount</th>
             <th>Description</th>
-            <th>Edit/Delete</th>
+            <th *ngIf="!showEditTransaction">Edit/Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -14,7 +14,7 @@
             <td>{{transaction.date}}</td>
             <td>{{transaction.amount}}</td>
             <td>{{transaction.description}}</td>
-            <td>
+            <td *ngIf="!showEditTransaction">
                 <app-button bgColor="yellow" text="Edit" (click)="onEdit(transaction)"></app-button>
                 <app-button bgColor="red" text="Delete" (click)="onDelete(transaction)"></app-button>
             </td>

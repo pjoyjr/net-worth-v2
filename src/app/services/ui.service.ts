@@ -10,8 +10,8 @@ export class UiService {
 
   constructor() { }
 
-  setEditToggle(editToggle: boolean): void {
-    this.showEditTransaction = editToggle;
+  setEditToggle(): void {
+    this.showEditTransaction = !this.showEditTransaction;
     this.subject.next(this.showEditTransaction);
   }
 

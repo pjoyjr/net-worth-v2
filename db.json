@@ -1,34 +1,28 @@
 {
   "transactions": [
     {
-      "id": 5,
-      "description": "Gas Purchase",
-      "date": "2020-07-30",
-      "amount": -7.41
-    },
-    {
       "id": 17,
-      "description": "Internet",
+      "description": "Internet Bill",
       "date": "2021-08-19",
       "amount": 40.45
     },
     {
-      "description": "food",
+      "id": 18,
+      "description": "McDonalds",
       "date": "2020-07-07",
-      "amount": 1.21,
-      "id": 18
+      "amount": 1.21
     },
     {
-      "description": "cc payment",
+      "id": 19,
+      "description": "CC Payment",
       "date": "2021-02-20",
-      "amount": 4.68,
-      "id": 19
+      "amount": 4.68
     },
     {
-      "id": 20,
-      "description": "Electri",
-      "date": "2021-08-16",
-      "amount": 48.24
+      "description": "Electric Bill",
+      "date": "2021-08-12",
+      "amount": 48.24,
+      "id": 20
     }
   ]
 }
