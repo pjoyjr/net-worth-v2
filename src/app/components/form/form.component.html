@@ -1,32 +1,56 @@
-<!--  -->
-<form>
-    <h2 *ngIf="!showEditTransaction">Add Transaction</h2>
-    <h2 *ngIf="showEditTransaction">Edit Transaction{{fillForm(currEdit)}}</h2>
-    <div *ngIf="showEditTransaction" class="form-control-text">
-        <h3>
-            <label for="id">ID:</label>
-        </h3>
-        <input type="text" name="id" id="id" [(ngModel)]="id" readonly disabled>
-    </div>
-    <div class="form-control-text">
-        <h3>
-            <label for="description">Description: </label>
-        </h3>
-        <input type="text" name="description" id="description" [(ngModel)]="description">
-    </div>
-    <div class="form-control-text">
-        <h3>
-            <label for="amount">Amount: </label>
-        </h3>
-        <input type="number" name="amount" id="amount" [(ngModel)]="amount" step=".01">
-    </div>
-    <div class="form-control-text">
-        <h3>
-            <label for="date">Date: </label>
-        </h3>
-        <input type="date" name="date" id="date" [(ngModel)]="date">
-    </div>
-    <app-button *ngIf="showEditTransaction" bgColor="yellow" text="Save Transaction" (click)="onEdit()"></app-button>
-    <app-button *ngIf="showEditTransaction" bgColor="red" text="Cancel Edit" (click)="cancelEdit()"></app-button>
-    <app-button *ngIf="!showEditTransaction" bgColor="green" text="Save Transaction" (click)="onSubmit()"></app-button>
-</form>
+<div *ngIf="!showEditTransaction">
+    <form>
+        <h2>Add Transaction</h2>
+        <div class="form-control-text">
+            <h3>
+                <label for="description">Description:</label>
+            </h3>
+            <input type="text" name="description" id="description" [(ngModel)]="description">
+        </div>
+        <div class="form-control-text">
+            <h3>
+                <label for="amount">Amount:</label>
+            </h3>
+            <input type="number" name="amount" id="amount" [(ngModel)]="amount" step=".01">
+        </div>
+        <div class="form-control-text">
+            <h3>
+                <label for="date">Date:</label>
+            </h3>
+            <input type="date" name="date" id="date" [(ngModel)]="date">
+        </div>
+        <app-button *ngIf="!showEditTransaction" bgColor="green" text="Save Transaction" (click)="onSubmit()"></app-button>
+    </form>
+</div>
+
+<div *ngIf="showEditTransaction">
+    <h2>Edit Transaction{{fillForm()}}</h2>
+    <form>
+        <div class="form-control-text">
+            <h3>
+                <label for="id">ID:</label>
+            </h3>
+            <input type="text" name="id" id="id" [(ngModel)]="id" readonly disabled>
+        </div>
+        <div class="form-control-text">
+            <h3>
+                <label for="editDescription">Description:</label>
+            </h3>
+            <input type="text" name="editDescription" id="editDescription" [(ngModel)]="editDescription">
+        </div>
+        <div class="form-control-text">
+            <h3>
+                <label for="editAmount">Amount:</label>
+            </h3>
+            <input type="number" name="editAmount" id="editAmount" [(ngModel)]="editAmount" step=".01">
+        </div>
+        <div class="form-control-text">
+            <h3>
+                <label for="editDate">Date:</label>
+            </h3>
+            <input type="date" name="editDate" id="editDate" [(ngModel)]="editDate">
+        </div>
+        <app-button bgColor="yellow" text="Save Transaction" (click)="onSubmit()"></app-button>
+        <app-button bgColor="red" text="Cancel Edit" (click)="cancelEdit()"></app-button>
+    </form>
+</div>

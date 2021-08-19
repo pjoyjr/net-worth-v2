@@ -14,6 +14,9 @@ export class FormComponent implements OnInit {
   date: any | string;
   amount: any | number = 0.00;
   id: any | number;
+  editDescription: any | string;
+  editDate: any | string;
+  editAmount: any | number;
 
   showEditTransaction: boolean = false;
   subscription: any | Subscription;
@@ -26,42 +29,59 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.currEdit != undefined){
-      this.fillForm(this.currEdit);
-    }
   }
 
+  //modify to check if edit or new for first if statement to reuse function
   onSubmit(){
-    if((!this.description || !this.date || !this.amount)){
-      alert('Please fill out form!');
-      return;
+    if(this.showEditTransaction != true){
+      if(!this.description || !this.date || !this.amount){
+        alert('Please fill out form!');
+        return;
+      }
+      const newTransaction: Transaction = {
+        description: this.description,
+        date: this.date,
+        amount: this.amount
+      };
+      this.onAdd(newTransaction)
+      this.description = '';
+      this.date = '';
+      this.amount = 0;
+
+    }else{
+      if(!this.editDescription || !this.editDate || !this.editAmount){
+        alert('Please fill out form!');
+        return;
+      }
+
+      const editedTransaction: Transaction = {
+        description: this.editDescription,
+        date: this.editDate,
+        amount: this.editAmount
+      };
+      this.onEdit(editedTransaction)
+      this.editDescription = '';
+      this.editDate = '';
+      this.editAmount = 0;
+
     }
 
-    const newTransaction: Transaction = {
-      description: this.description,
-      date: this.date,
-      amount: this.amount
-    };
-    this.onAdd(newTransaction)
-    
-    this.description = '';
-    this.date = '';
-    this.amount = 0;
   }
 
   onAdd(newTransaction: Transaction){
     this.onAddTransaction.emit(newTransaction);
   }
 
-  onEdit(){
-    this.onEditTransaction.emit();
+  onEdit(editedTransaction: Transaction){
+    this.onEditTransaction.emit(editedTransaction);
   }
 
-  fillForm(transaction: Transaction){
-    this.id = transaction.id;
-    this.description = transaction.description;
-    this.date = transaction.date;
-    this.amount = transaction.amount;
+  //Uncomment description, date, and amount
+  fillForm(){
+    this.id = this.currEdit.id;
+    //this.description = this.currEdit.description;
+    //this.date = this.currEdit.date;
+    //this.amount = this.currEdit.amount;
   }
 
   cancelEdit(){
