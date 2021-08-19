@@ -10,9 +10,9 @@ import { Subscription } from 'rxjs';
 })
 export class FormComponent implements OnInit {
   @Input() currEdit: any | Transaction = undefined;
-  description: any | string = "e.g. Gas Purchase";
+  description: any | string;
   date: any | string;
-  amount: any | number = 0.00;
+  amount: any | number;
   id: any | number;
   editDescription: any | string;
   editDate: any | string;
@@ -55,6 +55,7 @@ export class FormComponent implements OnInit {
       }
 
       const editedTransaction: Transaction = {
+        id: this.id,
         description: this.editDescription,
         date: this.editDate,
         amount: this.editAmount
@@ -78,16 +79,18 @@ export class FormComponent implements OnInit {
 
   //Uncomment description, date, and amount
   fillForm(){
-    this.id = this.currEdit.id;
-    this.editDescription = this.currEdit.description;
-    this.editDate = this.currEdit.date;
-    this.editAmount = this.currEdit.amount;
+    if(this.editDescription == undefined){
+      this.id = this.currEdit.id;
+      this.editDescription = this.currEdit.description;
+      this.editDate = this.currEdit.date;
+      this.editAmount = this.currEdit.amount;
+    }
   }
 
   cancelEdit(){
-    this.description = '';
-    this.date = '';
-    this.amount = 0;
+    this.editDescription = '';
+    this.editDate = '';
+    this.editAmount = 0;
     this.onCancelEdit.emit();
   }
 }

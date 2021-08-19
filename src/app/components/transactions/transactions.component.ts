@@ -41,7 +41,14 @@ export class TransactionsComponent implements OnInit {
   updateTransaction(editedTransaction: Transaction){
     this.uiService.setEditToggle(false);
     console.log(editedTransaction);
-    console.log("updated entry!");
+    this.transactionService.updateTransaction(editedTransaction).subscribe(() => (
+    this.transactions.forEach(transaction => {
+      if(transaction.id == editedTransaction.id){
+        transaction.description = editedTransaction.description;
+        transaction.date = editedTransaction.date;
+        transaction.amount = editedTransaction.amount;
+      }  
+    })));
   }
   
 }

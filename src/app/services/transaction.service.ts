@@ -31,4 +31,10 @@ export class TransactionService {
     return this.http.post<Transaction>(this.apiURL, transaction, httpOptions);
   }
 
+  
+  updateTransaction(transaction: Transaction): Observable<Transaction> {
+    const url = `${this.apiURL}/${transaction.id}`;
+    return this.http.put<Transaction>(url, transaction, httpOptions);
+  }
+
 }
