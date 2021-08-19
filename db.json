@@ -1,39 +1,34 @@
 {
-    "transactions": [{
-            "description": "Gas Purchase",
-            "date": "2020-07-30",
-            "amount": -7.41,
-            "id": 5
-        },
-        {
-            "description": "internet",
-            "date": "2021-08-19",
-            "amount": 40.45,
-            "id": 17
-        },
-        {
-            "description": "food",
-            "date": "2020-07-07",
-            "amount": 1.21,
-            "id": 18
-        },
-        {
-            "description": "cc payment",
-            "date": "2021-02-20",
-            "amount": 4.68,
-            "id": 19
-        },
-        {
-            "description": "Electric",
-            "date": "2021-08-16",
-            "amount": 48.24,
-            "id": 20
-        },
-        {
-            "description": "water",
-            "date": "11993-07-30",
-            "amount": 4.42,
-            "id": 21
-        }
-    ]
+  "transactions": [
+    {
+      "description": "Gas Purchase",
+      "date": "2020-07-30",
+      "amount": -7.41,
+      "id": 5
+    },
+    {
+      "description": "internet",
+      "date": "2021-08-19",
+      "amount": 40.45,
+      "id": 17
+    },
+    {
+      "description": "food",
+      "date": "2020-07-07",
+      "amount": 1.21,
+      "id": 18
+    },
+    {
+      "description": "cc payment",
+      "date": "2021-02-20",
+      "amount": 4.68,
+      "id": 19
+    },
+    {
+      "description": "Electric",
+      "date": "2021-08-16",
+      "amount": 48.24,
+      "id": 20
+    }
+  ]
 }
