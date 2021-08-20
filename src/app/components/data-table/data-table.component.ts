@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class DataTableComponent implements OnInit {
   @Input() transactions: Transaction[] = [];
+  searchWord: any | String = "";
   
   showEditTransaction: boolean = false;
   subscription: any | Subscription;

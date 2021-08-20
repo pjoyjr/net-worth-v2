@@ -14,6 +14,7 @@ import { AccountGridComponent } from './components/account-grid/account-grid.com
 import { HeaderComponent } from './components/header/header.component';
 import { FormComponent } from './components/form/form.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 
 const appRoutes: Routes = [
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     FormComponent,
     DataTableComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,
