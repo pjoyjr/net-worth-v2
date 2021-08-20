@@ -11,7 +11,10 @@ export class SearchFilterPipe implements PipeTransform {
       return transactions;
     }
     return transactions.filter(tranaction =>
-      tranaction.description.toLocaleLowerCase().includes(searchWord.toLocaleLowerCase()));
+      tranaction.id?.toString().toLocaleLowerCase().includes(searchWord.toString().toLocaleLowerCase()) ||
+      tranaction.description.toString().toLocaleLowerCase().includes(searchWord.toString().toLocaleLowerCase()) ||
+      tranaction.date.toString().toLocaleLowerCase().includes(searchWord.toString().toLocaleLowerCase()) ||
+      tranaction.amount.toString().toLocaleLowerCase().includes(searchWord.toString().toLocaleLowerCase()));
   }
 
 }

@@ -1,7 +1,7 @@
 <h2>Transactions List</h2>
 <div>
+    <label for="search"><h4>Search:</h4></label>
     <input type="text" id="searchWord" [(ngModel)]="searchWord">
-    <app-button bgColor="blue" text="Search"></app-button>
 </div>
 <table class="table table-striped table-bordered row-border table-styled">
     <thead>
@@ -20,8 +20,8 @@
             <td>{{transaction.amount}}</td>
             <td>{{transaction.description}}</td>
             <td>
-                <app-button *ngIf="!showEditTransaction" bgColor="red" text="Delete" (click)="onDelete(transaction)"></app-button>
                 <app-button *ngIf="!showEditTransaction" bgColor="yellow" text="Edit" (click)="onEdit(transaction)"></app-button>
+                <app-button *ngIf="!showEditTransaction" bgColor="red" text="Delete" (click)="onDelete(transaction)"></app-button>
             </td>
         </tr>
     </tbody>
