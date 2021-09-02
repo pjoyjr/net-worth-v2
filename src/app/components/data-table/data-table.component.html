@@ -6,10 +6,10 @@
 <table class="table table-striped table-bordered row-border table-styled">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Date</th>
-            <th>Amount</th>
-            <th>Description</th>
+            <th (click)="onToggle('id')">ID</th>
+            <th (click)="onToggle('date')">Date</th>
+            <th (click)="onToggle('amount')">Amount</th>
+            <th (click)="onToggle('description')">Description</th>
             <th>Edit/Delete</th>
         </tr>
     </thead>
