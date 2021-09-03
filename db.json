@@ -23,6 +23,18 @@
       "date": "2021-08-12",
       "amount": 48.24,
       "id": 20
+    },
+    {
+      "description": "Car Payment",
+      "date": "2021-09-02",
+      "amount": 201.45,
+      "id": 21
+    },
+    {
+      "description": "Water Bill",
+      "date": "1987-04-03",
+      "amount": 7.26,
+      "id": 22
     }
   ]
 }

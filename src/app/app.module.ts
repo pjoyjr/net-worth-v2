@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import {MatSortModule} from '@angular/material/sort';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormComponent } from './components/form/form.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { SearchFilterPipe } from './search-filter.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const appRoutes: Routes = [
@@ -39,7 +41,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes, { enableTracing: false }),
+    MatSortModule,
     FontAwesomeModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

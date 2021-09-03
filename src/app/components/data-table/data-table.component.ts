@@ -1,4 +1,5 @@
 import { Component,  OnInit, Input, Output, EventEmitter, ComponentFactoryResolver } from '@angular/core';
+import {Sort} from '@angular/material/sort';
 import { Transaction } from  '../../Transaction';
 import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
@@ -14,13 +15,12 @@ export class DataTableComponent implements OnInit {
   searchWord: any | String = "";
   filterName: any | String ="";
   filterAsc: boolean = true;
-  sortSetting: [string, boolean] = ["", true];
+  sortSetting: any | [string, boolean] = ["", true];
   
   showEditTransaction: boolean = false;
   subscription: any | Subscription;
   @Output() onEditTransaction: EventEmitter<Transaction> = new EventEmitter();
   @Output() onDeleteTransaction: EventEmitter<Transaction> = new EventEmitter();
-  @Output() onFilterToggle: EventEmitter<Transaction> = new EventEmitter();
 
   constructor(private uiService:UiService) {
     this.subscription = this.uiService.onToggle().subscribe((value) => (this.showEditTransaction = value)); }
@@ -35,15 +35,27 @@ export class DataTableComponent implements OnInit {
   onEdit(transaction: Transaction): void {
     this.onEditTransaction.emit(transaction);
   }
-  
-  onToggle(sortWord: string){
-    if (this.sortSetting[0] != sortWord){
-      this.sortSetting[0] = sortWord;
-      this.sortSetting[1] = true;
-    } else {
-      this.sortSetting[1] = !this.sortSetting[1];
+
+  sortData(sort: Sort) {
+    const data = this.transactions;
+    if (!sort.active || sort.direction === '') {
+      this.transactions = data;
+      return;
     }
-    console.log(this.sortSetting);
-    this.onFilterToggle.emit();
+
+    this.transactions = data.sort((a, b) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'id': return compare(a.id, b.id, isAsc);
+        case 'date': return compare(a.date, b.date, isAsc);
+        case 'amount': return compare(a.amount, b.amount, isAsc);
+        case 'description': return compare(a.description, b.description, isAsc);
+        default: return 0;
+      }
+    });
   }
+}
+
+function compare(a: any | string, b: any | string, isAsc: boolean) {
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
